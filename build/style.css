@@ -1,37 +1,67 @@
-.sidemenu { width: 60px; height: 100%; display: inline-block; background-color: #1E90FF;border: 3px solid #1E90FF; margin-right: 50px;}
-.appwrapper { width: 80%; height: 100%; display: inline-block}
-.wrapper {width: 100vw; height: 90vh; display: block;}
+.sidemenu {width: 100%; height: 100vh; display: inline-block; background-color: black;border: 0.5px solid black;}
+.appleft { width: 8%; height: 100%; display: inline-block; position: relative; padding-right: 2%;}
+.appwrapper { width: 90%; height: 100vh; overflow-y: scroll; display: inline-block; position: relative;vertical-align: top;}
+/* .wrapper {width: 100vw; height: 100vh; display: block;} */
 
 .popup_overlay{position: fixed; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 10; overflow-y: scroll; display: block;}
 
-.imgwrp { height: 60px; padding: 10px}
+.imgwrp { height: 40px; padding: 30px 30px}
 .activ { background-color: white; border-radius: 10px}
 .imgwrp img { width: 100%; height: 100%;}
 .sidewrp {display: block;}
 
 .bglist { display: table; width: 100%}
 .bglist .active { background-color: white;}
-.bgwrp { height: 60px;; display: table; padding: 10px;}
+.bgwrp { height: 60px;; display: table; padding: 20px;}
 .sidetxt {display: table-cell; vertical-align: middle; font-size: 25px; padding-right: 10px; width: 100px; text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 .sidetxt:hover { text-decoration: underline }
 
 .rightarrow {position: fixed; top: 40vh; left: 66px}
 .rightarrow img { width: 40px; height: 60px;}
+.tlines {
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 40px;
+  width: 4px;
+  background-color: white;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
 
 #flyoutMenu {
-  width: 30vw;
+  width: 250px;
   height: 100vh;
-  background-color: #1E90FF;
+  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
   transition: transform .8s cubic-bezier(0, .52, 0, 1);
   overflow: scroll;
   z-index: 1000;
+  border: 0.5px solid black
 }
  
 #flyoutMenu.hide {
-  transform: translate3d(-30vw, 0, 0);
+  transform: translate3d(-251px, 0, 0);
 }
 #flyoutMenu.show {
   transform: translate3d(0vw, 0, 0);
@@ -46,6 +76,72 @@
   text-decoration: underline;
 }
 
-body {
-  margin: 0px
+.userlist {
+  /* display: table-cell; */
+  padding: 10px;
+  width: 33%;
+  height: 50px;
+  /* text-align: center */
+}
+.userwpr {
+  width: 100%;
+  height: 40px;
+}
+
+.listwpr {
+  width: 100%;
+  height: 40px;
+}
+
+.usercalendar {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.users {
+  display: inline-block; width: 45%;
+}
+.calendars {
+  display: inline-block; width: 45%; overflow-x: scroll;
+}
+::-webkit-scrollbar {display:none}
+.greaterless {
+  width: 5%;
+  vertical-align: top;
+  padding-top: 20px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  position: sticky;
+  top: 0px;
+  overflow-y: scroll;
+}
+
+.usertext {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.insidetext {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+}
+
+.sticker {
+  overflow-y: hidden;
+  position: sticky;
+  top: 0;
 }

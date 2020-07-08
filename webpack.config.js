@@ -5,19 +5,26 @@ module.exports = {
     publicPath: '/',
     filename: 'build/bundle.js'
   },
+  devtool: "source-map",
   module: {
-    loaders: [
+    rules: [
       {
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015', 'stage-1']
-        }
-      }
+        test: /\.js$/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            "@babel/preset-react"
+          ],
+        },
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   resolve: {
-    extensions: ['','.css', '.js', '.jsx']
+    extensions: ['.css', '.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import DataList from './dataList.js'
-import ActiveState from './activestate.js'
+import SideMenu from './activestate.js'
+import main from './UserData.js';
 const rootReducer = combineReducers({
-    data : DataList,
-    activedata : ActiveState
+    sideMenu : SideMenu,
+    main : main,
 });
 
 export default rootReducer;

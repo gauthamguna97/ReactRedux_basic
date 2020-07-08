@@ -1,59 +1,101 @@
 import React from "react";
 import { Component } from "react";
-import InViewMonitor from 'react-inview-monitor';
-import List from "../containers/list.js";
 import SideMenu from "../containers/SideMenu.js";
 import Header from "../containers/Header.js";
+import StaticHeader from "../containers/StaticHeader.js";
+import SideBar from "../containers/SideBar.js";
+import { connect } from "react-redux";
+import { showSideMenu, showTasks, showAddTasks } from "../../Redux/actions/index.js";
+import DatePicker from "../containers/DatePicker.js";
+import ViewTask from "../containers/ViewTask.js";
+import AddTask from "../containers/AddTask.js";
+import '../../../style/style.css';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
         sideMenu: [
           {name: 'Home', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
           {name: 'Task Manager', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
-          {name: 'Resource Manager', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
+          {name: 'source Manager', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
+          {name: 'E-source Manager', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
+          {name: 'Resource Util', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
         ],
         selectedIndex: 0,
+        showSideBar: false,
     };
+    this.showSideMenu = this.showSideMenu.bind(this);
+    this.setSelectedIndex = this.setSelectedIndex.bind(this);
   }
 
-  showSideMenu(val) {
+  showSideMenu(val, index) {
     this.setState({
-      showSideBar: val
+      showSideBar: val,
+      selectedIndex: index ? index[0] : this.state.selectedIndex,
     });
   }
 
+  setSelectedIndex(val) {
+    this.setState({
+      selectedIndex: val,
+    })
+  }
+
+  handleSelection() {
+    if (this.props._showTasks) {
+      this.props.showTasks({});
+    } else if (this.props.showTasks) {
+      this.props._showAddTasks({});
+    }
+    this.showSideMenu(false);
+  }
+
+
   render() {
     const { sideMenu, showSideBar, selectedIndex } = this.state;
+    const { _showTasks, showAddTasks } = this.props;
+    console.log(this.props);
     return (
-      <div>
-        <Header />
+      <div className="twrapper">
+        <StaticHeader />
         <div className="wrapper">
-          <div className="sidemenu">
-            <div className="sidewrp" >
-              {sideMenu.map((item, index) => (
-                <div className={index === selectedIndex ? 'activ' : ''} onClick={() => this.setState({selectedIndex: index})}>
-                   <div className="imgwrp"> 
-                    <img src={index === selectedIndex ? item.actImg : item.img} />
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="appleft">
+            <SideBar data={sideMenu} showSideMenuFn={this.showSideMenu} setSelectedIndex={this.setSelectedIndex} activIndex={selectedIndex} />
           </div>
-          <div className="rightarrow" onClick={() => this.showSideMenu(true)}>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRy80o55Yi7zcropiITyj_60j_ITCo5_wvfyQ&usqp=CAU" />
+          <div className="appwrapper">
+            <DatePicker />
+            <Header />
           </div>
-          <div className="appwrapper" onClick={() => this.showSideMenu(true)}>show</div>
         </div>
         <div className="sidemenupop">
-          {showSideBar &&
-            <span onClick={() => this.showSideMenu(false)} className="popup_overlay" /> 
+          {(showSideBar || _showTasks || showAddTasks ) &&
+            <span onClick={() => this.handleSelection()} className="popup_overlay" /> 
           }
-          <SideMenu data={this.state.sideMenu} show={showSideBar} selectedIndex={selectedIndex} />
+          {
+            <SideMenu data={this.state.sideMenu} show={showSideBar} selectedIndex={selectedIndex} showSideMenuFn={this.showSideMenu} />
+          }
+          {_showTasks &&
+            <ViewTask />
+          }
+          {showAddTasks &&
+            <AddTask />
+          }
         </div>
       </div>
       
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  _showTasks: state.main.showTasks,
+  showAddTasks: state.main.showAddTasks,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  showTasks: (value) => dispatch(showTasks(value)),
+  _showAddTasks: (value) => dispatch(showAddTasks(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
