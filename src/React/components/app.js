@@ -1,12 +1,12 @@
 import React from "react";
 import { Component } from "react";
 import SideMenu from "../containers/SideMenu.js";
-import Header from "../containers/Header.js";
+import MainLayout from "../containers/MainLayout";
 import StaticHeader from "../containers/StaticHeader.js";
 import SideBar from "../containers/SideBar.js";
 import { connect } from "react-redux";
 import { showSideMenu, showTasks, showAddTasks } from "../../Redux/actions/index.js";
-import DatePicker from "../containers/DatePicker.js";
+import ResourceFilter from "../containers/ResourceFilter.js";
 import ViewTask from "../containers/ViewTask.js";
 import AddTask from "../containers/AddTask.js";
 import '../../../style/style.css';
@@ -64,8 +64,8 @@ class App extends Component {
             <SideBar data={sideMenu} showSideMenuFn={this.showSideMenu} setSelectedIndex={this.setSelectedIndex} activIndex={selectedIndex} />
           </div>
           <div className="appwrapper">
-            <DatePicker />
-            <Header />
+            <ResourceFilter />
+            <MainLayout />
           </div>
         </div>
         <div className="sidemenupop">

@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import './sidemenu.css';
 
 const SideMenu = (props) => {
   const { data = [], show, selectedIndex } = props;

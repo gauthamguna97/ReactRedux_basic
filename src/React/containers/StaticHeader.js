@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { showTasks, addToTop, showAddTasks } from "../../Redux/actions";
 import Menu from './DropDown';
+import './staticheader.css';
 
 const SHeader = (props) => {
   const { topData = {}, userData } = props;

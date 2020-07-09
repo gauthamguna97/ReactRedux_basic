@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { showTasks, addToTop } from "../../Redux/actions";
+import './mainlayout.css';
 
 const Headers = ['Resource', 'Availability', 'schedule'];
 const SideMenu = (props) => {

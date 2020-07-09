@@ -1,0 +1,15 @@
+
+
+.sclose { position: absolute; right: 5px; top: 5px; width: 40px; height: 40px; cursor: pointer; }
+.sclose:before, .sclose:after { position: absolute; left: 15px; content: ' '; height: 40px; width: 4px; background-color: #740070; }
+.sclose:before { transform: rotate(45deg); }
+.sclose:after { transform: rotate(-45deg); }
+
+.pkmvanstext { display: table; font-size: 18px; padding: 5% 10%; cursor: pointer; color: #363d43; border-bottom: 1px solid #f2f2f2; table-layout: fixed; width: 80%; }
+.pkmvanstext .activ { background-color: thistle; }
+.packchkouter { display: table-cell; width: 46px; }
+.packchk { background-image: url(//akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/uncheck.svg); background-repeat: no-repeat; background-size: 100%; cursor: pointer; display: inline-block; height: 20px; position: relative; vertical-align: middle; width: 20px; }
+.activ .packchk { background-image: url(//akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/bd_chkbox-selct-icn.svg); }
+.packchktxt { display: table-cell; vertical-align: middle; }
+.pkmvansblk { display: block; padding: 0 20px; }
+.pkmvans { box-sizing: border-box; display: inline-block; position: relative; }

@@ -1,0 +1,10 @@
+#flyoutMenu { width: 250px; height: 100vh; background-color: #740070; position: fixed; top: 0; left: 0; transition: transform .8s cubic-bezier(0, .52, 0, 1); overflow: scroll; z-index: 1000; border: 0.5px solid #740070 }
+ #flyoutMenu.hide { transform: translate3d(-251px, 0, 0); }
+#flyoutMenu.show { transform: translate3d(0vw, 0, 0); overflow: hidden; }
+#flyoutMenu h2 a { color: #333; margin-left: 15px; text-decoration: none; }
+#flyoutMenu h2 a:hover { text-decoration: underline; }
+.bglist { display: table; width: 100%}
+.bglist .active { background-color: white;}
+.bgwrp { height: 60px;; display: table; padding: 20px; cursor: pointer;}
+.sidetxt {display: table-cell; vertical-align: middle; font-size: 25px; padding-right: 10px; width: 100px; text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+.sidetxt:hover { text-decoration: underline }

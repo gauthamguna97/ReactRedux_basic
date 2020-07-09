@@ -1,0 +1,14 @@
+.wrap { position: relative; overscroll-behavior: contain; }
+.subhdr .track { flex: 1 0 calc(33%); scroll-snap-align: start; }
+.subhdrcal .track { flex: 1 0 calc(10%); scroll-snap-align: start; }
+.subhdr { display: inline-block; width: 44%; padding-right: 1%; vertical-align: top; }
+.subhdrcal { display: inline-block; width: 50%; vertical-align: top; }
+.subhdrcal .entry { background-color: none; width: auto; height: 45px; margin: 15px 0px; padding: 0px; }
+.headers { top: 0; position: -webkit-sticky; position: sticky; z-index: 1; }
+.entry { height: 50px; padding-top: 25px; text-align: center; }
+.tracks, .scroller { display: flex; }
+.scroller { overflow-x: hidden; width: 100%; }
+.scenes::-webkit-scrollbar,
+.scroller::-webkit-scrollbar { display: none; }
+.calschedule { overflow-y: scroll; }
+.heading { display: flex; justify-content: center; align-items: center; position: -webkit-sticky; position: sticky; top: 0; z-index: 10; background-color: #F5F7FA; }

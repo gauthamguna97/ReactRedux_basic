@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { getUserData, getDateList } from "../../Redux/actions";
+import './resourcefilter.css';
 
 const monthList = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-const DatePicker = (props) => {
+const ResourceFilter = (props) => {
   const { month = parseInt(new Date().getMonth(), 10) } = props;
   const [val, setVal] = useState('');
 
@@ -51,4 +52,4 @@ const mapDispatchToProps = (dispatch) => ({
   getDateListFn: (params) => dispatch(getDateList(params)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DatePicker);
+export default connect(mapStateToProps, mapDispatchToProps)(ResourceFilter);

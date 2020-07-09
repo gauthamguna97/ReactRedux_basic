@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { showSideMenu } from "../../Redux/actions";
+import './sidebar.css';
 
 const SideMenu = (props) => {
   const { data = [], activIndex = 0 } = props;

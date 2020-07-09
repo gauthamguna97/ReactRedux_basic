@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { showTasks, sendDelete } from "../../Redux/actions";
+import './viewtask.css';
 
 class ViewTask extends Component {
   constructor(props) {

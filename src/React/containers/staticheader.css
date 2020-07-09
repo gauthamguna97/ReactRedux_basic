@@ -1,0 +1,7 @@
+.headerfix {height: 8vh; padding: 2vh 0; width: 100%; background-color: white; color: black; }
+.headerfix .headerval { display: inline-block; text-align: center; font-size: 20px; font-weight: 600; height: 5vh; color: #740040; padding-top: 2vh; vertical-align: middle; }
+.nav__submenu { display: none; }
+.activ .nav__menu-item { background-color: #740070; }
+.nav__submenu { border: 1px solid #740070; font-weight: 400; text-transform: none; display: none; position: absolute; width: auto; background-color: white; color: black; z-index: 1000; width: 200px; border-radius: 10px; }
+.activ .nav__submenu { display: block; }
+.nav__submenu-item:hover { cursor: pointer; background: white; color: #740070; }
