@@ -24,9 +24,9 @@ const Menu  = (props) => {
       onMouseOut={(e) => addClass(e, false)}
     >
       {topData.name} <span style={{ color: "#740070", fontWeight: '800', fontSize: '14px'}}>v</span>
-      <div className="nav__submenu" style={{ height: '70vh', overflowY: 'scroll' }}>
+      <div className="nav__submenu" style={{ height: '70vh', overflowY: 'scroll', position: 'sticky' }}>
         {userData.map((item, index) => (
-          <div className="nav__submenu-item" style={{ height: '20px', padding: '5px'}} onClick={(e) => addClass(e,false, item)}>
+          <div className="nav__submenu-item" style={{ padding: '5px'}} onClick={(e) => addClass(e,false, item)}>
             <div>{item.name}</div>
           </div>
         ))}

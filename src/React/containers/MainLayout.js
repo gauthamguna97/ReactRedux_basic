@@ -10,6 +10,7 @@ const SideMenu = (props) => {
 
   const _addToTop = (item) => {
     // props.addToTopFn(item);
+    document.getElementsByName('myElements').scrollLeft = 5;
   }
 
   return (
@@ -18,8 +19,8 @@ const SideMenu = (props) => {
         <div className="subhdr">
           <div className="headers">
             <div className="scroller" name="myElements">
-              {Headers.map((item) => (
-                <div className="track">
+              {Headers.map((item, index) => (
+                <div className={index === 0 ? 'profile' : 'track'}>
                   <div className="heading" style={{ height: '50px', color: '#740070', fontWeight: '600', fontSize: '15px'}}>{item}</div>
                 </div>
               ))}
@@ -27,8 +28,11 @@ const SideMenu = (props) => {
           </div>
           {dataArray.map((item) => (
             <div className="scroller" onClick={() => _addToTop(item)} style={{ borderBottom: 'solid 5px #efefef ', backgroundColor: 'white', fontSize: '15px', fontWeight: '600' }} name="myElements">
-                <div className="track">
-                  <div className="entry">{item.name}</div>
+                <div className="profile">
+                  <div style={{ width: '100%', height: '70px', textAlign: 'center' }}>
+                    <img src="https://image.flaticon.com/icons/svg/3135/3135715.svg" />
+                    <div className="textl">{item.name}</div>
+                  </div>
                 </div>
                 <div className="track" style={{ color: ( (month === new Date().getMonth()) && item.Availabilty[month] > 20) || (month > new Date().getMonth()) ? 'green' : 'red', fontWeight: '400' }}>
                   <div className="entry">{month < new Date().getMonth() ? 0 : item.Availabilty[month]}%</div>
@@ -39,15 +43,16 @@ const SideMenu = (props) => {
             </div>   
           ))}
         </div>
+        <span>{`<`}</span>
         <div className="subhdrcal" id="calendarscroll">
           <div className="headers">
             <div className="scroller syncscroll" name="myElements">
               {dateList.map((item) => (
                 <div className="track">
                   <div className="" style={{ height: '50px', fontSize: '10px', fontWeight: 'normal'}}>
-                    <div className="heading" style={{ height: '20%', paddingTop: '30%' }}>{item.day}</div>
-                    <div className="heading" style={{ height: '50%'}}>{item.wDay}</div>
-                  </div> 
+                    <div className="heading" style={{ height: '28px', paddingTop: '10px' }}>{item.day}</div>
+                    <div className="heading" style={{ height: '22px', paddingBottom: '5px'}}>{item.wDay}</div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -92,6 +97,7 @@ const SideMenu = (props) => {
             ))}
           </div>
         </div>
+        <span>{`>`}</span>
       </div>  
     </div>
   );

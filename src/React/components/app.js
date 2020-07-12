@@ -1,11 +1,11 @@
 import React from "react";
 import { Component } from "react";
 import SideMenu from "../containers/SideMenu.js";
-import MainLayout from "../containers/MainLayout";
+import MainLayout from "../containers/MainLayout.js";
 import StaticHeader from "../containers/StaticHeader.js";
 import SideBar from "../containers/SideBar.js";
 import { connect } from "react-redux";
-import { showSideMenu, showTasks, showAddTasks } from "../../Redux/actions/index.js";
+import { showTasks, showAddTasks } from "../../Redux/actions/index.js";
 import ResourceFilter from "../containers/ResourceFilter.js";
 import ViewTask from "../containers/ViewTask.js";
 import AddTask from "../containers/AddTask.js";
@@ -58,11 +58,11 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="twrapper">
-        <StaticHeader />
+        <div className="appleft">
+          <SideBar data={sideMenu} showSideMenuFn={this.showSideMenu} setSelectedIndex={this.setSelectedIndex} activIndex={selectedIndex} />
+        </div>
         <div className="wrapper">
-          <div className="appleft">
-            <SideBar data={sideMenu} showSideMenuFn={this.showSideMenu} setSelectedIndex={this.setSelectedIndex} activIndex={selectedIndex} />
-          </div>
+          <StaticHeader showSideMenuFn={this.showSideMenu} />
           <div className="appwrapper">
             <ResourceFilter />
             <MainLayout />

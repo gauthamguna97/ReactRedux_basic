@@ -10,20 +10,16 @@ const SideMenu = (props) => {
   }
   return (
     <div className="sidemenu">
-      <div className="sidewrp" >
+        <div className="sideheading" onClick={() => props.setSelectedIndex(index)}>
+          <div>MYJU'S</div>
+        </div>
         {data.map((item, index) => (
-          <div className={index === activIndex ? 'activ' : ''} onClick={() => props.setSelectedIndex(index)}>
-              <div className="imgwrp"> 
+          <div className={index === activIndex ? 'sidewrp activ' : 'sidewrp'} onClick={() => props.setSelectedIndex(index)}>
+            <div className="imgwrp"> 
               <img src={index === activIndex ? item.actImg : item.img} />
             </div>
           </div>
         ))}
-      </div>
-      <div className="sidestr" onClick={() => shosdmn(true) }>
-        <div className="sidet" >
-          {`>`}
-        </div>
-      </div>
     </div>
   );
 }

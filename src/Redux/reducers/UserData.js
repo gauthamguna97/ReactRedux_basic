@@ -66,6 +66,7 @@ const addItem = (data, _Arr, month) => {
 
 const defaulState = {
   userData: userData,
+  globalData: globalData,
   dateList: _dateList(),
   month: parseInt(new Date().getMonth(), 10),
   TopData: globalData && globalData[0],

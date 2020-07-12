@@ -25,12 +25,4 @@ module.exports = {
   resolve: {
     extensions: ['.css', '.js', '.jsx']
   },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './',
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    }
-  }
 };

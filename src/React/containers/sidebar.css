@@ -1,7 +1,9 @@
-.sidemenu {width: 100%; height: 90vh; display: inline-block; background-color: #740070;border: 0.5px solid #740070;}
-.sidewrp {display: block; cursor: pointer;}
-.imgwrp { height: 40px; padding: 30px 30px}
-.activ { background-color: white; border-radius: 10px}
+
+.sidemenu {width: 100%;height: 100vh; display: inline-block; background-color: #740070}
+.sidewrp {display: block; cursor: pointer; height: 100px;}
+.imgwrp { height: 100px; padding: 35px 40%}
+.activ { background-color: white; border-radius: 10px 0px 0px 10px}
 .imgwrp img { width: 100%; height: 100%;}
-.sidestr { position: fixed; left: 8.1%; top: 40%; height: 100px; background-color: bisque; color: #740070; width: 2%; }
-.sidestr .sidet { width: 100%; height: 50px; padding: 30px 0px; font-size: 25px; }
+.sidestr { position: fixed; left: 8%; top: 40%; height: 100px; background-color: bisque; color: #740070; width: 2%; }
+.sidestr .sidet { width: 100%; height: 50px; padding: 0px; font-size: 25px; }
+.sideheading{display: block;height: 10vh;background-color: white; font-size: 24px; font-weight: 600; text-align: center; padding: 3vh 0 0 0; color: #740070}
