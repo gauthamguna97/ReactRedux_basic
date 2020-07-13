@@ -1,7 +1,7 @@
 import { GlobalData } from './data.js';
 import localStorage from './loaclStore.js';
 
-const globalData = localStorage.get('userData') ? localStorage.get('userData') : GlobalData;
+let globalData = localStorage.get('userData') ? localStorage.get('userData') : GlobalData;
 let userData = globalData;
 const week = [
   'Sun',
@@ -161,14 +161,15 @@ export default function(state = defaulState, action) {
     case 'ADD_TASK':
       const { AddData, _Arr } = action.payload;
       globalData = addItem(AddData, _Arr, state.month);
+      let fData = userData;
       if (state.search) {
-        userData =  globalData.filter((item) => item.name.toLowerCase().indexOf(state.search) > -1);
+        fData =  globalData.filter((item) => item.name.toLowerCase().indexOf(state.search) > -1);
         // console.log(fUser)
       }
       return {
         ...state,
         globalData: globalData,
-        userData: userData,
+        userData: fData,
         showTasks: false,
       }
   }
