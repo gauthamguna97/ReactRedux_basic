@@ -145,11 +145,15 @@ export default function(state = defaulState, action) {
     case 'DELETE_TASKS':
       const { taskData, select } = action.payload;
       globalData = deleteItem(taskData, select, state.month);
-      console.log('useDate', userData);
+      let fData = userData;
+      if (state.search) {
+        fData =  globalData.filter((item) => item.name.toLowerCase().indexOf(state.search) > -1);
+        // console.log(fUser)
+      }
       return {
         ...state,
         globalData: globalData,
-        userData: globalData,
+        userData: fData,
         showTasks: false,
       }
     case 'ADD_TO_TOP':
