@@ -83,14 +83,14 @@ const defaulState = {
 }
 
 export default function(state = defaulState, action) {
-  console.log(action.payload);
+  // console.log(action.payload);
   switch (action.type) {
     
     case "FETCH_DATA":
       if (action.payload.search) {
-        console.log(action.payload, state.userData[0]);
+        // console.log(action.payload, state.userData[0]);
         const fUser = action.payload.value ? userData.filter((item) => item.name.toLowerCase().indexOf(action.payload.value) > -1) : [];
-        console.log(fUser)
+        // console.log(fUser)
         return {
           ...state,
           userData: fUser,
@@ -108,7 +108,7 @@ export default function(state = defaulState, action) {
       if (action.payload.UserName) {
         let taskData = userData.filter((item) => item.name === action.payload.UserName);
         taskData = taskData[0];
-        console.log(action, taskData);
+        // console.log(action, taskData);
         return {
           ...state,
           taskData: taskData,
@@ -124,7 +124,7 @@ export default function(state = defaulState, action) {
       if (action.payload.UserName) {
         let taskData = userData.filter((item) => item.name === action.payload.UserName);
         taskData = taskData[0];
-        console.log(action, taskData);
+        // console.log(action, taskData);
         return {
           ...state,
           taskData: taskData,
@@ -157,7 +157,7 @@ export default function(state = defaulState, action) {
         showTasks: false,
       }
     case 'ADD_TO_TOP':
-      console.log('payload')
+      // console.log('payload')
       return {
         ...state,
         TopData: action.payload,
@@ -165,15 +165,15 @@ export default function(state = defaulState, action) {
     case 'ADD_TASK':
       const { AddData, _Arr } = action.payload;
       globalData = addItem(AddData, _Arr, state.month);
-      let fData = userData;
+      let _fData = userData;
       if (state.search) {
-        fData =  globalData.filter((item) => item.name.toLowerCase().indexOf(state.search) > -1);
+        _fData =  globalData.filter((item) => item.name.toLowerCase().indexOf(state.search) > -1);
         // console.log(fUser)
       }
       return {
         ...state,
         globalData: globalData,
-        userData: fData,
+        userData: _fData,
         showTasks: false,
       }
   }

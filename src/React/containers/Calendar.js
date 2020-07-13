@@ -344,7 +344,7 @@ const Calendar = (props) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.activedata)
+  // console.log(state.activedata)
   return {
     active : state.activedata
   };

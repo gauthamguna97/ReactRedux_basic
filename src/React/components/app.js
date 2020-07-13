@@ -55,7 +55,7 @@ class App extends Component {
   render() {
     const { sideMenu, showSideBar, selectedIndex } = this.state;
     const { _showTasks, showAddTasks } = this.props;
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="twrapper">
         <div className="appleft">

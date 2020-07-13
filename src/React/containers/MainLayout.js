@@ -5,7 +5,7 @@ import './mainlayout.css';
 
 const Headers = ['Resource', 'Availability', 'schedule'];
 const MainLayout = (props) => {
-  console.log(props);
+  // console.log(props);
   const { dataArray = [], dateList = [], month} = props;
 
   const _addToTop = (item) => {
@@ -24,7 +24,7 @@ const MainLayout = (props) => {
 
   useEffect(() => {
     document.getElementById('calendarscroll').scrollLeft = 0
-    console.log('changed');
+    // console.log('changed');
   }, [dateList]);
 
   return (
@@ -94,7 +94,7 @@ const MainLayout = (props) => {
                         const end = item.schedule[month].end[itemIndex];
                         const start = item.schedule[month].start[itemIndex];
                         const lth = dateList[dateList.length - 1 ].day > end ? (end - start) + 1 : (dateList[dateList.length - 1 ].day - start) + 1;
-                        console.log('lth', lth,end, start)
+                        // console.log('lth', lth,end, start)
                         pth = `1 0 calc(${10 * lth}%)`;
                         borderRds = '10px';
                         if ((month < new Date().getMonth()) || ( (month === new Date().getMonth()) && start < new Date().getDate())) {

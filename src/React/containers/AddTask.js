@@ -66,7 +66,7 @@ class ViewTask extends Component {
     const { month } = this.props;
     const _date = parseInt(day.toLocaleDateString().split('/')[1]);
     var issue = false;
-    console.log(_date, 'dateeeee');
+    // console.log(_date, 'dateeeee');
     for (var i=0; i <= aSelect[0]; i++) {
       if (this.props.taskData.schedule[month].days.indexOf(_date + i) > -1) {
         this.setState({
@@ -77,7 +77,7 @@ class ViewTask extends Component {
       }
     }
     if (!issue) {
-      console.log(new Date(2020, month + 1, 0).getDate(), _date + aSelect[0])
+      // console.log(new Date(2020, month + 1, 0).getDate(), _date + aSelect[0])
       if (new Date(2020, month + 1, 0).getDate() >= _date + aSelect[0]) {
         this.setState({
           text: 'TaskAdded',

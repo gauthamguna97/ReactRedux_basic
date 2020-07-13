@@ -21,7 +21,7 @@ export function showAddTasks(item) {
 }
 
 export function getUserData(item) {
-  console.log('dispatching');
+  // console.log('dispatching');
   return {
     type: "FETCH_DATA",
     payload: item,
@@ -29,7 +29,7 @@ export function getUserData(item) {
 }
 
 export function sendDelete(item) {
-  console.log('dispatching');
+  // console.log('dispatching');
   return {
     type: "DELETE_TASKS",
     payload: item,
@@ -37,7 +37,7 @@ export function sendDelete(item) {
 }
 
 export function addToTop(item) {
-  console.log('dispatching');
+  // console.log('dispatching');
   return {
     type: "ADD_TO_TOP",
     payload: item,

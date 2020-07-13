@@ -29,7 +29,7 @@ const SHeader = (props) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.activedata)
+  // console.log(state.activedata)
   return {
     topData: state.main.TopData,
     userData: state.main.userData,

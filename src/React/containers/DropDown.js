@@ -4,7 +4,7 @@ import { addToTop } from "../../Redux/actions";
 
 const Menu  = (props) => {
   const { topData = {}, globalData} = props;
-  console.log('UserData', globalData);
+  // console.log('UserData', globalData);
   const addClass = (e, val, item) => {
     if (val) {
       document.getElementById('companyName').classList.add('activ');

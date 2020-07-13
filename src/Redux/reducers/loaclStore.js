@@ -14,7 +14,7 @@ function set(key, value) {
 }
 
 function remove(key) {
-  console.log(key);
+  // console.log(key);
   if (window.localStorage) {
     window.localStorage.removeItem(key);
   }
