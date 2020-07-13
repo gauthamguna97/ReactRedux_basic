@@ -17,7 +17,7 @@
 .popwrpr {position: absolute; z-index: 100; top: 10%; width: 400px; background-color: white; border-radius: 5px; overflow-y: scroll; margin: 0 30%;}
 .textIcon { height: 10%; width: 100%; display: table; padding: 5% 0;}
 .subtext { font-size: 12px;}
-.DayPicker { padding: 20%; width: 100%;}
+.DayPicker { padding: 0 20%; width: 100%;}
 
 @media only screen and (max-width: 700px) {
   .pkmvanstext { font-size: 14px; padding: 5% 0 5% 20%;}

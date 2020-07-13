@@ -94,11 +94,13 @@ export default function(state = defaulState, action) {
         return {
           ...state,
           userData: fUser,
+          search: action.payload.value,
         }
       } else {
         return {
           ... state,
           userData: userData,
+          search: false,
         }
       }
     
@@ -142,11 +144,12 @@ export default function(state = defaulState, action) {
       }
     case 'DELETE_TASKS':
       const { taskData, select } = action.payload;
-      userData = deleteItem(taskData, select, state.month);
+      globalData = deleteItem(taskData, select, state.month);
       console.log('useDate', userData);
       return {
         ...state,
-        userData: userData,
+        globalData: globalData,
+        userData: globalData,
         showTasks: false,
       }
     case 'ADD_TO_TOP':
@@ -157,10 +160,14 @@ export default function(state = defaulState, action) {
       }
     case 'ADD_TASK':
       const { AddData, _Arr } = action.payload;
-      userData = addItem(AddData, _Arr, state.month);
-      console.log('useDate', userData);
+      globalData = addItem(AddData, _Arr, state.month);
+      if (state.search) {
+        userData =  globalData.filter((item) => item.name.toLowerCase().indexOf(state.search) > -1);
+        // console.log(fUser)
+      }
       return {
         ...state,
+        globalData: globalData,
         userData: userData,
         showTasks: false,
       }
