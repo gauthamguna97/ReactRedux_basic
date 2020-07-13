@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import { addTaskFunction, sendDelete, showAddTasks } from "../../Redux/actions";
+import './viewtask.css';
 
 class ViewTask extends Component {
   constructor(props) {
@@ -108,19 +109,19 @@ class ViewTask extends Component {
     }
     return(
       <div
-        style={{ position: "fixed", zIndex: '100', width: '25%', left: (screen.width - 100)/2 , top: '20%', backgroundColor: 'white', borderRadius: '5px' }}
+        className="popwrpr"
       >
         <div className="sclose" onClick={() => this.props.showAddTasksFn({})}/>
-        <div style={{ padding: '5%', height: '10%'}}>
+        <div className="textIcon">
           <div style={{ textAlign: 'center', color: '#740070' }}>{taskData.name}</div>
         </div>
-        <div style={{ padding: '5%', height: '10%'}}>
-          <div style={{ textAlign: 'center', color: 'black' }}> Availabilty {!Avail ? taskData.Availabilty[month] : 0}%</div>
+        <div className="textIcon">
+          <div style={{ textAlign: 'center', color: 'green' }}> Availabilty {!Avail ? taskData.Availabilty[month] : 0}%</div>
         </div>
         {!PickDate && show && !Avail &&
           <div>
-            <div style={{ padding: '5%', height: '10%'}}>
-              <div style={{ textAlign: 'center', color: 'blue' }}>Select Task</div>
+            <div className="textIcon">
+              <div style={{ textAlign: 'center', color: 'blue' }}>Pick A Task</div>
             </div>
             <div className="pkmvans pkmvansblk">
               {Tasks.map((item, index) => (

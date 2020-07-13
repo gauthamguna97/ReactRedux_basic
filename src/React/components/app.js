@@ -18,9 +18,9 @@ class App extends Component {
         sideMenu: [
           {name: 'Home', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
           {name: 'Task Manager', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
-          {name: 'source Manager', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
-          {name: 'E-source Manager', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
-          {name: 'Resource Util', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
+          {name: 'Resource view', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
+          {name: 'Enquiry', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
+          {name: 'Utilization', id: 1, img: 'https://akam.cdn.jdmagicbox.com/images/icons/android/video2.png', actImg: 'https://akam.cdn.jdmagicbox.com/images/icons/android/videosactivewbg.png'},
         ],
         selectedIndex: 0,
         showSideBar: false,

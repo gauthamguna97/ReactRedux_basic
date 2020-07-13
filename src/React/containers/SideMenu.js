@@ -13,7 +13,7 @@ const SideMenu = (props) => {
         {data.map((item, index) => (
           <div className={selectedIndex === index ? ' bgwrp active' : 'bgwrp'} onClick={() => props.showSideMenuFn(false, [index])}>
             <div className="sidetxt">
-              <div style={{ color: selectedIndex === index ? 'black' : 'white' }}>{item.name}</div>
+              <div>{item.name}</div>
             </div>
           </div>
         ))}

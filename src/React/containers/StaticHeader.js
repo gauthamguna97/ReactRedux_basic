@@ -12,15 +12,16 @@ const SHeader = (props) => {
         <img src="https://cdn3.iconfinder.com/data/icons/mobile-banking-ver-4a/100/1-48-512.png" />
       </div>
       <div className="headerval mheading">Utilization</div>
-      <div className="headerSecond">
-        <div className="headerval cname">
-          <Menu />
-        </div>
-        <div
-          className="ctask"
-          onClick={() => props.showAddTaskFn({ UserName: topData.name })}
-        >
-          <img src="https://www.iconsdb.com/icons/preview/caribbean-blue/add-xxl.png"/>
+      <div className="headersecondwrap">
+        <div className="headersecond">
+          <div className="headerval cname">
+            <Menu />
+          </div>
+          <div
+            className="ctask"
+          >
+            <img onClick={() => props.showAddTaskFn({ UserName: topData.name })} src="https://cdn3.iconfinder.com/data/icons/gradient-circle/36/5004-512.png"/>
+          </div>
         </div>
       </div>
     </div>

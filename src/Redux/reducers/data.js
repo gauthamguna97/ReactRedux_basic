@@ -1,14 +1,14 @@
 const GlobalData =  [
     {
       name: 'Paypal',
-      Availabilty: [65,85,65,85,65,85,65,85,65,85,65,85],
+      Availabilty: [25,85,65,85,65,85,65,85,65,85,65,85],
       schedule: [
         {
-          start: [5,10,15],
-          end: [5,12,17],
-          blocks: [[5],[10,11, 12], [15,16,17]],
-          days: [5,10,11,12,15,16,17],
-          names: ['Task A', 'Task B', 'Task C'],
+          start: [5,10,15, 20, 23, 27],
+          end: [5,12,17, 21, 25, 29],
+          blocks: [[5],[10,11, 12], [15,16,17], [20,21], [23,24,25], [27, 28, 29]],
+          days: [5,10,11,12,15,16,17, 20, 21, 23, 24, 25, 27, 28, 29],
+          names: ['Task A', 'Task B', 'Task C', 'Task B', 'Task C', 'Task C'],
         },
         {
           start: [1],
@@ -94,10 +94,10 @@ const GlobalData =  [
       Availabilty: [85,65,85,65,85,65,85,65,85,65,85,65],
       schedule: [
         {
-          start: [1],
-          end: [3],
-          blocks: [[1,2,3]],
-          days: [1,2,3],
+          start: [14],
+          end: [16],
+          blocks: [[14,15,16]],
+          days: [14, 15, 16],
           names: ['Task C'],
         },
         {

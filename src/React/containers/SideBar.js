@@ -20,6 +20,7 @@ const SideMenu = (props) => {
             </div>
           </div>
         ))}
+        <div className="dragger" onClick={() => shosdmn(true)}><img src="https://img.icons8.com/color/2x/more-than.png"></img></div>
     </div>
   );
 }

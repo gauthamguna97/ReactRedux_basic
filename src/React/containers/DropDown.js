@@ -3,8 +3,8 @@ import React, { Component, useState } from "react"
 import { addToTop } from "../../Redux/actions";
 
 const Menu  = (props) => {
-  const { topData = {}, userData} = props;
-  console.log('UserData', userData);
+  const { topData = {}, globalData} = props;
+  console.log('UserData', globalData);
   const addClass = (e, val, item) => {
     if (val) {
       document.getElementById('companyName').classList.add('activ');
@@ -24,8 +24,8 @@ const Menu  = (props) => {
       onMouseOut={(e) => addClass(e, false)}
     >
       {topData.name} <span style={{ color: "#740070", fontWeight: '800', fontSize: '14px'}}>v</span>
-      <div className="nav__submenu" style={{ height: '70vh', overflowY: 'scroll', position: 'sticky' }}>
-        {userData.map((item, index) => (
+      <div className="nav__submenu" style={{ height: '70vh', overflowY: 'scroll', width: 'inherit'}}>
+        {globalData.map((item, index) => (
           <div className="nav__submenu-item" style={{ padding: '5px'}} onClick={(e) => addClass(e,false, item)}>
             <div>{item.name}</div>
           </div>
@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => {
   return {
     topData: state.main.TopData,
-    userData: state.main.userData,
+    globalData: state.main.globalData,
   };
 }
 

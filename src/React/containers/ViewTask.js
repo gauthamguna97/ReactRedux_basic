@@ -11,7 +11,7 @@ class ViewTask extends Component {
       text: '',
       show: true,
     };
-    this.monthList = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    this.monthList = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   }
 
   handleS(index) {
@@ -47,12 +47,10 @@ class ViewTask extends Component {
       return;
     }
     return (
-      <div
-        style={{ position: "fixed", zIndex: '100', width: '25%', left: (screen.width - 100)/2 , top: '20%', backgroundColor: 'white', borderRadius: '5px' }}
-      >
+      <div className="popwrpr">
         <div className="sclose" onClick={() => this.props.showTasksFn({})}/>
-        <div style={{ padding: '5%', height: '10%'}}>
-          <div style={{ textAlign: 'center', color: '#740070' }}>{taskData.name}</div>
+        <div className="textIcon">
+          <div style={{ textAlign: 'center', color: '#740070' }}>{taskData.name}'s Task List</div>
         </div>
         {schedule[month].start.length > 0 && show &&
           <div className="pkmvans pkmvansblk">
@@ -69,7 +67,7 @@ class ViewTask extends Component {
                     </span>
                     <span className="packchktxt font16">
                       {`${schedule[month].names[index]} `}
-                        <span style={{ fontSize: '10px' }}>{`(${item} - ${schedule[month].end[index]} ${this.monthList[month]})`}</span>
+                        <span className="subtext" >{`(${item} - ${schedule[month].end[index]} ${this.monthList[month]})`}</span>
                     </span>
                   </div>
                 )
@@ -81,13 +79,13 @@ class ViewTask extends Component {
           </div>
         }
         {schedule[month].start.length === 0 && show &&
-          <div style={{ padding: '5%', height: '10%'}}>
-            <div style={{ textAlign: 'center', color: '#740070' }}>No Tasks To show</div>
+          <div className="textIcon">
+            <div style={{ textAlign: 'center', color: 'black' }}>No Tasks To show</div>
           </div>
         }
         {text &&
-          <div style={{ padding: '5%', height: '10%'}}>
-            <div style={{ textAlign: 'center', color: '#740070' }}>{text}</div>
+          <div className="textIcon">
+            <div style={{ textAlign: 'center', color: 'black' }}>{text}</div>
           </div>
         }
       </div>

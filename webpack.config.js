@@ -5,6 +5,7 @@ module.exports = {
     publicPath: '/',
     filename: 'build/bundle.js'
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {

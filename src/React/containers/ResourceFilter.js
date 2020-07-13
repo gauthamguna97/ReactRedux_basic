@@ -25,19 +25,20 @@ const ResourceFilter = (props) => {
     }
   }
   return(
-    <div style={{ width: '100%', height: '10vh', zIndex: '2', position: 'sticky', top: '0', backgroundColor: '#F5F7FA' }}>
+    <div className="rwrp" style={{ width: '100%', height: '10vh', zIndex: '2', position: 'sticky', top: '0', backgroundColor: '#F5F7FA' }}>
       <div style={{ display: 'inline-block', width: '50%', height: '100%',padding: '2.5vh 5%' }}>
         <input
           placeholder="search names"
+          type="search"
           value={val}
           style={{ height: '5vh', borderRadius: '1vh', color: '#740070', width: '100%', paddingLeft: '5%' }}
           onInput={(e) => getDate(e.target.value)}
         />
-      </div>  
+      </div>
       <div style={{ display: 'inline-block', width: '50%', height: '100%', paddingLeft: '15%' }}>
-        <span style={{ paddingRight: '5px', color: 'grey'}} onClick={() => getDateList()}>{`<`}</span>
+        <span style={{ paddingRight: '5px', color: 'grey', cursor: 'pointer'}} onClick={() => getDateList()}>{`<`}</span>
         <span style={{ color: '#740070' }}>{`${monthList[month]} 2020`}</span>
-        <span style={{ paddingLeft: '5px', color: 'grey'}} onClick={() => getDateList(true)}>{`>`}</span>
+        <span style={{ paddingLeft: '5px', color: 'grey', cursor: 'pointer'}} onClick={() => getDateList(true)}>{`>`}</span>
       </div>
     </div>
   )

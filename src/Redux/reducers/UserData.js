@@ -48,12 +48,22 @@ const deleteItem = (data, indexArr, month) => {
 const addItem = (data, _Arr, month) => {
   userData.forEach((element, index) => {
     if (element.name === data.name) {
-      userData[index].schedule[month].start.push(_Arr.start);
-      userData[index].schedule[month].end.push(_Arr.end);
-      userData[index].schedule[month].names.push(_Arr.name);
-      userData[index].schedule[month].blocks.push(_Arr.block);
+      let _index = 0;
+      let done = false;
+      userData[index].schedule[month].start.forEach((item, idx) => {
+        if (!done && (item > _Arr.start)) {
+          _index = idx;
+          done = true;
+        } else if (!done) {
+          _index = idx + 1;
+        }
+      })
+      userData[index].schedule[month].start.splice(_index, 0, _Arr.start);
+      userData[index].schedule[month].end.splice(_index, 0, _Arr.end);
+      userData[index].schedule[month].names.splice(_index, 0, _Arr.name);
+      userData[index].schedule[month].blocks.splice(_index, 0, _Arr.block);
       var list = []
-      userData[index].schedule[month].blocks.map((item, index) => {
+      userData[index].schedule[month].blocks.map((item) => {
         list = list.concat(item);
       });
       userData[index].schedule[month].days = list;
